@@ -1,10 +1,10 @@
-// import logo from "./logo.svg";
-// import "./App.css";
 import React from "react";
-// import { Button } from "antd";
-// import RefAutoComplete from "antd/es/auto-complete";
-
+import ThemedButton from "./ThemedButton";
+import PropTypes from "prop-types";
 class PostDetail extends React.Component {
+  static propTypes = {
+    postId: PropTypes.number.isRequired,
+  };
   state = {
     postDetail: null,
   };
@@ -109,6 +109,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <ThemedButton theme="success" label="hi" />
         <PostDetail postId={this.state.postId} />
         <button onClick={() => this.setState({ postId: 20 })}>
           postId 변경
